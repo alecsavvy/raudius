@@ -17,6 +17,6 @@ async fn main() -> Result<(), Error> {
         .await?;
     client.stream_track("D7KyD", None).await?;
 
-    // get bulk and stream tracks are not supported yet
+    // get bulk tracks not supported yet
     Ok(())
 }
