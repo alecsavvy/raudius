@@ -28,6 +28,7 @@ serde_yaml = "0.9.16"
 tokio-util = { version = "0.7.4", features = ["codec"] }
 url = "2.1"
 tokio = { version = "1.23.0", features = ["fs", "io-util", "macros", "rt-multi-thread"] }
+rand = "0.8.5"
 reqwest = { version = "0.11.13", features = ["stream", "json"] }
 
 # The `console_error_panic_hook` crate provides better debugging of panics by
@@ -47,3 +48,27 @@ openapi = { path = "../codegen" }
 
 [dev-dependencies]
 wasm-bindgen-test = "0.3.33"
+
+[[example]]
+name = "users"
+path = "examples/users_api.rs"
+
+[[example]]
+name = "playlists"
+path = "examples/playlists_api.rs"
+
+[[example]]
+name = "tips"
+path = "examples/tips_api.rs"
+
+[[example]]
+name = "tracks"
+path = "examples/tracks_api.rs"
+
+[[example]]
+name = "resolve"
+path = "examples/resolve_api.rs"
+
+[[example]]
+name = "stream"
+path = "examples/stream_track.rs"
