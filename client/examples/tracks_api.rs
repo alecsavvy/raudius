@@ -15,7 +15,6 @@ async fn main() -> Result<(), Error> {
     client
         .get_trending_tracks(Some("jazz"), Some("week"))
         .await?;
-    client.stream_track("D7KyD", None).await?;
 
     // get bulk tracks not supported yet
     Ok(())

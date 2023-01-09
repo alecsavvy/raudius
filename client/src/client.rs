@@ -1,4 +1,5 @@
 use crate::error::Error;
+use bytes::Bytes;
 use reqwest::header::CONTENT_LENGTH;
 use reqwest::RequestBuilder;
 use serde::{de::DeserializeOwned, Deserialize};
@@ -36,6 +37,17 @@ impl Client {
         T: DeserializeOwned,
     {
         self.query(path, |req| req).await
+    }
+
+    pub(crate) async fn get_raw(&self, path: &str) -> Result<Bytes, Error> {
+        // TODO: merge this logic into a helper with the "query" func
+        let url = &format!("{}/{}/{}", &self.host, &self.version, path);
+        let mut req = self.client.get(url);
+        if let Some(app) = &self.app_name {
+            req = req.query(&[("app_name", app)]);
+        }
+        let res = req.send().await?.bytes().await?;
+        Ok(res)
     }
 
     pub(crate) async fn query<T, F>(&self, path: &str, f: F) -> Result<T, Error>

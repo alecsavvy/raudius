@@ -79,7 +79,7 @@ impl Client {
                 )));
             }
         };
-        let track = self.get(url).await?;
-        Ok(track)
+        let track = self.get_raw(url).await?;
+        Ok(track.to_vec())
     }
 }

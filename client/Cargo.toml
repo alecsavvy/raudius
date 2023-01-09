@@ -48,6 +48,7 @@ openapi = { path = "../codegen" }
 
 [dev-dependencies]
 wasm-bindgen-test = "0.3.33"
+rodio = "0.16.0"
 
 [[example]]
 name = "users"
