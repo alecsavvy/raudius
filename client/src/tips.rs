@@ -1,6 +1,6 @@
 use crate::client::Client;
 use crate::error::Error;
-use serde_json::Value;
+use openapi::models::GetTipsResponse;
 
 #[derive(Debug, Default)]
 pub struct TipQuery {
@@ -14,7 +14,7 @@ pub struct TipQuery {
 }
 
 impl Client {
-    pub async fn get_tips(&self, query: Option<TipQuery>) -> Result<Value, Error> {
+    pub async fn get_tips(&self, query: Option<TipQuery>) -> Result<GetTipsResponse, Error> {
         let url = "tips";
         match query {
             None => self.get(url).await,

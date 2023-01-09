@@ -1,9 +1,9 @@
 use crate::client::Client;
 use crate::error::Error;
-use serde_json::Value;
+use openapi::models::{TrackResponse, TrackSearch, TracksResponse};
 
 impl Client {
-    pub async fn get_track(&self, track_id: &str) -> Result<Value, Error> {
+    pub async fn get_track(&self, track_id: &str) -> Result<TrackResponse, Error> {
         self.get(&format!("tracks/{}", track_id)).await
     }
 
@@ -11,7 +11,7 @@ impl Client {
         &self,
         query: &str,
         only_downloadable: Option<bool>,
-    ) -> Result<Value, Error> {
+    ) -> Result<TrackSearch, Error> {
         self.query("tracks/search", |mut req| {
             req = req.query(&[("query", query)]);
             if let Some(dl) = only_downloadable {
@@ -26,7 +26,7 @@ impl Client {
         &self,
         genre: Option<&str>,
         time: Option<&str>,
-    ) -> Result<Value, Error> {
+    ) -> Result<TracksResponse, Error> {
         self.query("tracks/trending", |mut req| {
             if let Some(genre) = genre {
                 req = req.query(&[("genre", genre)]);
@@ -44,7 +44,7 @@ impl Client {
         &self,
         permalink: Option<Vec<&str>>,
         id: Option<Vec<&str>>,
-    ) -> Result<Value, Error> {
+    ) -> Result<TracksResponse, Error> {
         self.query("tracks", |mut req| {
             if let Some(permalink) = &permalink {
                 for link in permalink {
