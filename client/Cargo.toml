@@ -47,7 +47,3 @@ openapi = { path = "../codegen" }
 
 [dev-dependencies]
 wasm-bindgen-test = "0.3.33"
-
-[profile.release]
-# Tell `rustc` to optimize for small code size.
-opt-level = "s"
