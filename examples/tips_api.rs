@@ -1,4 +1,4 @@
-use client::{client::Client, error::Error, tips::TipQuery};
+use raudius::{client::Client, error::Error, tips::TipQuery};
 
 // runs through all the code samples in the docs
 #[tokio::main]

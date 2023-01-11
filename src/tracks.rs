@@ -1,6 +1,6 @@
 use crate::client::Client;
 use crate::error::Error;
-use openapi::models::{TrackResponse, TrackSearch, TracksResponse};
+use crate::models::{TrackResponse, TrackSearch, TracksResponse};
 
 impl Client {
     pub async fn get_track(&self, track_id: &str) -> Result<TrackResponse, Error> {

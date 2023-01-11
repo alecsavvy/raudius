@@ -1,5 +1,5 @@
+use crate::models::*;
 use crate::{client::Client, error::Error};
-use openapi::models::*;
 
 // TODO: macroize a bunch of this
 impl Client {

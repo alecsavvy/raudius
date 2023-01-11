@@ -1,6 +1,6 @@
 use crate::client::Client;
 use crate::error::Error;
-use openapi::models::GetTipsResponse;
+use crate::models::GetTipsResponse;
 
 #[derive(Debug, Default)]
 pub struct TipQuery {

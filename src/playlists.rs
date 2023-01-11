@@ -1,6 +1,6 @@
 use crate::client::Client;
 use crate::error::Error;
-use openapi::models::{
+use crate::models::{
     PlaylistResponse, PlaylistSearchResult, PlaylistTracksResponse, TrendingPlaylistsResponse,
 };
 

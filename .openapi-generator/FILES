@@ -1,7 +1,5 @@
 .gitignore
-.openapi-generator-ignore
 .travis.yml
-Cargo.toml
 README.md
 docs/Activity.md
 docs/ConnectedWallets.md
@@ -38,7 +36,6 @@ docs/UserAssociatedWalletResponse.md
 docs/UserResponse.md
 docs/UserSearch.md
 docs/VerifyToken.md
-git_push.sh
 src/apis/configuration.rs
 src/apis/mod.rs
 src/lib.rs

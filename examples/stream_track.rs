@@ -1,4 +1,4 @@
-use client::error::Error;
+use raudius::{client::Client, error::Error};
 use rodio::{Decoder, OutputStream};
 
 #[tokio::main]
@@ -12,7 +12,7 @@ async fn main() -> Result<(), Error> {
 
     println!("downloading track {}", track_id);
 
-    let client = client::client::Client::new().build().await?;
+    let client = Client::new().build().await?;
     let track_bytes = client.stream_track(&track_id, None).await?;
     let cursor = std::io::Cursor::new(track_bytes);
 
