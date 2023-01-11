@@ -9,7 +9,7 @@ impl Client {
         self.get(&format!("playlists/{}", playlist_id)).await
     }
 
-    pub async fn get_tranding_playlists(
+    pub async fn get_trending_playlists(
         &self,
         time: Option<&str>,
     ) -> Result<TrendingPlaylistsResponse, Error> {

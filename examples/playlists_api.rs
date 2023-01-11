@@ -7,11 +7,11 @@ async fn main() -> Result<(), Error> {
 
     client.get_playlist("DOPRl").await?;
     client.search_playlists("Hot & New").await?;
-    client.get_tranding_playlists(None).await?;
-    client.get_tranding_playlists(Some("week")).await?;
-    client.get_tranding_playlists(Some("month")).await?;
-    client.get_tranding_playlists(Some("year")).await?;
-    client.get_tranding_playlists(Some("allTime")).await?;
+    client.get_trending_playlists(None).await?;
+    client.get_trending_playlists(Some("week")).await?;
+    client.get_trending_playlists(Some("month")).await?;
+    client.get_trending_playlists(Some("year")).await?;
+    client.get_trending_playlists(Some("allTime")).await?;
     client.get_playlist_tracks("DOPRl").await?;
 
     Ok(())
