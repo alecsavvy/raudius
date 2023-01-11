@@ -24,4 +24,5 @@
 
 git_push.sh
 Cargo.toml
-lib.rs
+src/lib.rs
+.travis.yml

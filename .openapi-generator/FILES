@@ -1,5 +1,4 @@
 .gitignore
-.travis.yml
 README.md
 docs/Activity.md
 docs/ConnectedWallets.md
@@ -38,7 +37,6 @@ docs/UserSearch.md
 docs/VerifyToken.md
 src/apis/configuration.rs
 src/apis/mod.rs
-src/lib.rs
 src/models/activity.rs
 src/models/connected_wallets.rs
 src/models/connected_wallets_response.rs
