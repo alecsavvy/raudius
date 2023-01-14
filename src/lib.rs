@@ -1,3 +1,10 @@
+//! Wrapper around the Audius API.
+//!
+//! Models are automatically generated from the swagger.yaml. This is
+//! created from the original swagger.json in the Audius docs.
+//!
+//! [`Audius`]: https://audiusproject.github.io/api-docs/
+
 #[macro_use]
 extern crate serde_derive;
 

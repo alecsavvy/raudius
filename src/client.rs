@@ -4,6 +4,7 @@ use reqwest::header::CONTENT_LENGTH;
 use reqwest::RequestBuilder;
 use serde::{de::DeserializeOwned, Deserialize};
 
+/// Client struct to access the audius API. All methods are accessed from here.
 #[derive(Debug, Clone)]
 pub struct Client {
     pub(crate) host: String,
@@ -66,6 +67,9 @@ impl Client {
     }
 }
 
+/// Builds a [Client] based on the builder parameters.
+/// If a host is not provided the client will randomly pick on from
+/// the available list.
 pub struct ClientBuilder {
     host: Option<String>,
     app_name: Option<String>,
@@ -73,6 +77,7 @@ pub struct ClientBuilder {
 }
 
 impl ClientBuilder {
+    /// Instantiate the builder.
     pub fn new() -> Self {
         Self {
             host: None,
@@ -106,6 +111,7 @@ impl ClientBuilder {
         Ok(host.to_owned())
     }
 
+    /// Return a new client based on the builders settings.
     pub async fn build(self) -> Result<Client, Error> {
         let client = self.client.unwrap_or_default();
         let app_name = self.app_name;
