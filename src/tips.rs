@@ -14,6 +14,7 @@ pub struct TipQuery {
 }
 
 impl Client {
+    /// Get tips based on the query options.
     pub async fn get_tips(&self, query: Option<TipQuery>) -> Result<GetTipsResponse, Error> {
         let url = "tips";
         match query {

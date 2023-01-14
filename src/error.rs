@@ -1,5 +1,13 @@
 use reqwest::Error as ReqError;
 
+/// Error
+///
+/// All of the errors that this crate can return. Any internal crate errors
+/// are usually wrapped in their own variant with the internal type inside
+/// in case a consumer of this crate needs the lower level error.
+///
+/// Request Errors are errors documented in the Audius API and the swagger doc.
+/// If a error type exists but is undocumented it will show up under the [Unknown(ReqError)] variant.
 #[derive(Debug)]
 pub enum Error {
     BuilderError(String),

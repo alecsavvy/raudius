@@ -3,10 +3,12 @@ use crate::error::Error;
 use crate::models::{TrackResponse, TrackSearch, TracksResponse};
 
 impl Client {
+    /// Get a track.
     pub async fn get_track(&self, track_id: &str) -> Result<TrackResponse, Error> {
         self.get(&format!("tracks/{}", track_id)).await
     }
 
+    /// Search for tracks.
     pub async fn search_tracks(
         &self,
         query: &str,
@@ -22,6 +24,7 @@ impl Client {
         .await
     }
 
+    /// Get pending tracks based on genre, time, or a combination.
     pub async fn get_trending_tracks(
         &self,
         genre: Option<&str>,
@@ -40,6 +43,7 @@ impl Client {
         .await
     }
 
+    /// Get multiple tracks.
     pub async fn get_bulk_tracks(
         &self,
         permalink: Option<Vec<&str>>,
@@ -61,6 +65,9 @@ impl Client {
         .await
     }
 
+    /// Get MP3 bytes of a track. Does not chunk the request. This method will download the entire track.
+    ///
+    /// * `max_bytes` - if the track HEAD request is larger than this the method will return an error.
     pub async fn stream_track(
         &self,
         track_id: &str,
