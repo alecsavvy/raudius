@@ -26,3 +26,4 @@ git_push.sh
 Cargo.toml
 src/lib.rs
 .travis.yml
+README.md

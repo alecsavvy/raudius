@@ -1,5 +1,4 @@
 .gitignore
-README.md
 docs/Activity.md
 docs/ConnectedWallets.md
 docs/ConnectedWalletsResponse.md
