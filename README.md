@@ -1,4 +1,4 @@
-# 🎧 raudius 
+# 🎧 raudius
 
 (pronounced raw-dee-us) A rust API client for the Audius project.
 
@@ -14,15 +14,15 @@ Full support for the [Audius API documented here](https://audiusproject.github.i
 
 ## rust support
 
-The bulk of this project is written in rust. You can use this crate like any other project by importing it via cargo.
+The bulk of this project is written in rust. You can use this crate like any other project by importing it via cargo. Not on crates.io yet.
 
-```toml 
+```toml
 raudius = "x.x.x"
 ```
 
 ## node.js support
 
-Node.js support is provided via Neon. This is so development between wasm and node can proceed independently if necessary.
+TODO: Node.js support will be provided via Neon. This is so development between wasm and node can proceed independently if necessary.
 
 ## wasm support
 
